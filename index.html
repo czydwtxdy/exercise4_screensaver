@@ -2,7 +2,7 @@
     <style>
         *
         body{
-            transition: background-color 3s ease-in-out; 
+            transition: background-color 1s ease-in-out; 
         }
         .container {
     display: grid;
@@ -169,9 +169,82 @@
       list-style: square inside url("sqpurple.gif");
     }
 
+    /*bigger*/
+@media (max-width:1400px)and (min-width:1000px) {
+    .container {
+        grid-template-columns: repeat(6,1fr) ; 
+        grid-template-rows: repeat(6,1fr);
+        
+    }
+    /* .img2{
+       animation: scale 0.5s infinite ease-in-out;
+    }
+    @keyframes scale {
+        0%, 100% { transform: scale(1); } 
+        50% { transform: scale(2); }
+    } */
+
+    }
+    .header{
+    grid-column: span 6;
+    grid-row: span 1;
+    text-align: center;
+    justify-content: center;
+    background: linear-gradient(336deg, #f7c2d6, #97adf7, #e2ab77);
+    background-size: 600% 600%;
+    -webkit-animation: AnimationName 2s ease infinite;
+    -moz-animation: AnimationName 2s ease infinite;
+    animation: AnimationName 2s ease infinite;
+
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:39% 0%}
+    50%{background-position:62% 100%}
+    100%{background-position:39% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:39% 0%}
+    50%{background-position:62% 100%}
+    100%{background-position:39% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:39% 0%}
+    50%{background-position:62% 100%}
+    100%{background-position:39% 0%}
+}
+    }
+
+    .nav {
+    grid-column: span 3;
+    grid-row: span 2;
+    background-color: #ffedee;
+}
+
+    .main{
+        grid-column:span 3;
+        grid-row: span 4;
+        background-color: #c0c1f1;
+        border: #ffffff;
+        border-width: 3px;
+    }
+
+    .aside{
+        grid-column: span 3;
+        grid-row: span 2; 
+        
+    }
+   .footer{
+    grid-column:span 6; 
+    grid-row:span 1;
+    
+   }
+
+
+    
+
 
     /* midumn */
-    @media (max-width:1200px)and (min-width:900px) {
+    @media (max-width:1000px)and (min-width:800px) {
     .container {
         grid-template-columns: repeat(6,1fr) ; /* One column */
         grid-template-rows: repeat(6,1fr);
@@ -250,7 +323,7 @@
     }
 
 /*small*/
-    @media (max-width:900px)and (min-width:700px) {
+    @media (max-width:800px)and (min-width:500px) {
     .container {
         grid-template-columns: 1fr ; /* One column */
         grid-template-rows: repeat(8,1fr);
@@ -330,7 +403,7 @@
 }
     }
 /*smaller*/
-    @media (max-width:700px) {
+    @media (max-width:500px) {
     .container {
         grid-template-columns: 1fr ; /* One column */
         grid-template-rows: repeat(16,1fr);
