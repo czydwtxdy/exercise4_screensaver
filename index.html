@@ -6,8 +6,8 @@
         }
         .container {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* Three equal columns */
-    grid-template-rows: repeat(6, 1fr); /* Three equal columns */
+    grid-template-columns: repeat(6, 1fr); 
+    grid-template-rows: repeat(6, 1fr); 
 
         font-family: 'Courier New', Courier, monospace;
       }
@@ -150,7 +150,7 @@
         border-radius: 50%;
         overflow: hidden;
                 position: relative;
-                object-fit: cover; /*crop the image according to the grid*/
+                object-fit: cover; 
             }
             #two {
                 display: none; /* Initially hide the second image */
@@ -169,32 +169,105 @@
       list-style: square inside url("sqpurple.gif");
     }
 
-    /*bigger*/
-@media (max-width:1400px)and (min-width:1000px) {
+    /*bigger*/ /*works okay*/
+@media (max-width:1800px)and (min-width:1400px) {
     .container {
         grid-template-columns: repeat(6,1fr) ; 
         grid-template-rows: repeat(6,1fr);
         
     }
-    /* .img2{
-       animation: scale 0.5s infinite ease-in-out;
-    }
-    @keyframes scale {
-        0%, 100% { transform: scale(1); } 
-        50% { transform: scale(2); }
-    } */
-
-    }
+    
     .header{
     grid-column: span 6;
     grid-row: span 1;
     text-align: center;
     justify-content: center;
-    background: linear-gradient(336deg, #f7c2d6, #97adf7, #e2ab77);
+    background: linear-gradient(336deg, #e24682, #97adf7, #e2ab77);
     background-size: 600% 600%;
     -webkit-animation: AnimationName 2s ease infinite;
     -moz-animation: AnimationName 2s ease infinite;
     animation: AnimationName 2s ease infinite;
+    
+    @-webkit-keyframes AnimationName {
+        0%{background-position:39% 0%}
+        50%{background-position:62% 100%}
+        100%{background-position:39% 0%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:39% 0%}
+        50%{background-position:62% 100%}
+        100%{background-position:39% 0%}
+    }
+    @keyframes AnimationName {
+        0%{background-position:39% 0%}
+        50%{background-position:62% 100%}
+        100%{background-position:39% 0%}
+    }
+}
+    .nav{
+        grid-column:span 1;
+        grid-row:span 4;
+        background-color: #ffedee;
+
+    }
+    .main{
+        grid-column:span 4;
+        grid-row: span 4;
+        background-color: #c0c1f1;
+        border: #ffffff;
+        border-width: 3px;
+    }
+
+    .aside{
+        grid-column: span 1;
+        grid-row: span 4; 
+        background-color: #f8e5ed;
+    }
+   .footer{
+    grid-column:span 6; 
+    grid-row:span 1;
+    
+   }
+
+   .img2{
+       animation: scale 0.5s infinite ease-in-out;
+    }
+    @keyframes scale {
+        0%, 100% { transform: scale(1); } 
+        50% { transform: scale(2); }
+    }
+}
+    
+
+    /* big */ /*the header here is too wide D:<*/
+    @media (max-width:1400px)and (min-width:1000px) {
+    .container {
+        grid-template-columns: repeat(6,1fr) ; 
+        grid-template-rows: repeat(6,1fr);
+        
+    }
+    
+    .header{
+    grid-column: span 6;
+    grid-row: span 1;
+    text-align: center;
+    justify-content: center;
+    background: linear-gradient(336deg, #e24682, #97adf7, #e2ab77);
+    background-size: 600% 600%;
+    -webkit-animation: AnimationName 2s ease infinite;
+    -moz-animation: AnimationName 2s ease infinite;
+    animation: AnimationName 2s ease infinite;
+    }
+    
+    
+    .img2{
+       animation: scale 0.5s infinite ease-in-out;
+    }
+    @keyframes scale {
+        0%, 100% { transform: scale(1); } 
+        50% { transform: scale(2); }
+    }
+
 
 
 @-webkit-keyframes AnimationName {
@@ -212,16 +285,16 @@
     50%{background-position:62% 100%}
     100%{background-position:39% 0%}
 }
-    }
+    
 
     .nav {
-    grid-column: span 3;
-    grid-row: span 2;
+    grid-column: span 1;
+    grid-row: span 4;
     background-color: #ffedee;
 }
 
     .main{
-        grid-column:span 3;
+        grid-column:span 4;
         grid-row: span 4;
         background-color: #c0c1f1;
         border: #ffffff;
@@ -229,8 +302,8 @@
     }
 
     .aside{
-        grid-column: span 3;
-        grid-row: span 2; 
+        grid-column: span 1;
+        grid-row: span 4; 
         
     }
    .footer{
@@ -240,15 +313,16 @@
    }
 
 
+
     
 
 
-    /* midumn */
+    /* midumn */ /*the spans I mark for all the grid is kinda working, but tooooo tall*/
     @media (max-width:1000px)and (min-width:800px) {
     .container {
-        grid-template-columns: repeat(6,1fr) ; /* One column */
-        grid-template-rows: repeat(6,1fr);
-        
+        grid-template-columns: repeat(6,1fr) ; 
+        grid-template-rows: repeat(8,1fr);
+        height:100vh;
     }
     .img2{
        animation: scale 0.5s infinite ease-in-out;
@@ -289,13 +363,13 @@
 }
     
     .nav{
-        grid-column:span 1;
-        grid-row:span 4;
+        grid-column:span 3;
+        grid-row:span 2;
         background-color: #ffedee;
 
     }
     .main{
-        grid-column:span 4;
+        grid-column:span 3;
         grid-row: span 4;
         background-color: #c0c1f1;
         border: #ffffff;
@@ -303,8 +377,8 @@
     }
 
     .aside{
-        grid-column: span 1;
-        grid-row: span 4; 
+        grid-column: span 3;
+        grid-row: span 2; 
         
     }
    .footer{
@@ -314,6 +388,7 @@
    }
 
 
+
 @keyframes move-left-and-right {
   0%   { left:0px;}
   25%  { left:200px;}
@@ -321,13 +396,13 @@
   75%  {left:-200px; }
   100% {left:0px}
     }
+}
 
-/*small*/
+/*small*//*this part becomes a mess.. each span is SUPER SUPER LONG*/
     @media (max-width:800px)and (min-width:500px) {
     .container {
-        grid-template-columns: 1fr ; /* One column */
-        grid-template-rows: repeat(8,1fr);
-        height: 100vh;
+        grid-template-columns: 1fr ; 
+        grid-template-rows: repeat(12,1fr);   
     }
     *:read-write {
         font-family: 'Courier New', Courier, monospace;
@@ -354,6 +429,10 @@
     50%{background-position:62% 100%}
     100%{background-position:39% 0%}
 }
+.header{
+    grid-column: span 1;
+    grid-row: span 1;
+}
     .nav{
         grid-column:span 1;
         grid-row:span 1;
@@ -361,7 +440,7 @@
     }
     .main{
         grid-column:span 1;
-        grid-row: span 1;
+        grid-row: span 4;
         background-color: #dfecff;
     }
 
@@ -369,10 +448,6 @@
         grid-column: span 1;
         grid-row: span 1; 
         
-    }
-    .header{
-        grid-column:span 1;
-        grid-row: 1;
     }
    .footer{
     grid-column:span 1; 
@@ -402,12 +477,15 @@
   animation-iteration-count: infinite;
 }
     }
-/*smaller*/
+
+/*smallest*/
+/*this part becomes a mess.. each span is SUPER SUPER LONG too*/
     @media (max-width:500px) {
     .container {
-        grid-template-columns: 1fr ; /* One column */
-        grid-template-rows: repeat(16,1fr);
-        height: 100vh;
+        grid-template-columns: 1fr ; 
+        grid-template-rows: repeat(8,1fr);
+        height: auto;
+        
     }
     .img2{
        animation: scale 0.5s infinite ease-in-out, rotate 1s infinite linear;
@@ -420,14 +498,18 @@
         0% { transform: rotate(0deg);}
         100% { transform: rotate(360deg);}
     }
-    .nav{
+    .header{
         grid-column:span 1;
+        grid-row: span 1;
+    }
+    .nav{
+        grid-column: span 1;
         grid-row:span 1;
 
     }
     .main{
         grid-column:span 1;
-        grid-row: span 1;
+        grid-row: span 4;
         background-color: #ffe4ea;
     }
 
@@ -435,10 +517,6 @@
         grid-column: span 1;
         grid-row: span 1; 
         
-    }
-    .header{
-        grid-column:span 1;
-        grid-row: span 1;
     }
    .footer{
     grid-column:span 1; 
@@ -486,7 +564,7 @@
       margin: auto;
       color:rgb(224, 100, 141);
     }
-
+}  
 
       
     
