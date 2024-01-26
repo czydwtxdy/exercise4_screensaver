@@ -2,26 +2,49 @@
     <style>
         *
         body{
-            transition: background-color 10s ease-in-out; 
+            transition: background-color 3s ease-in-out; 
         }
         .container {
     display: grid;
     grid-template-columns: repeat(6, 1fr); /* Three equal columns */
     grid-template-rows: repeat(6, 1fr); /* Three equal columns */
-    
+
         font-family: 'Courier New', Courier, monospace;
       }
       .header {
         grid-column: span 6;
         grid-row: span 1;
-        background:#fff9c8;
         text-align: center;
         justify-content: center;
-      }
+        background: linear-gradient(336deg, #f7c2d6, #97adf7, rgb(240, 167, 98));
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:39% 0%}
+    50%{background-position:80% 100%}
+    100%{background-position:39% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:39% 0%}
+    50%{background-position:62% 100%}
+    100%{background-position:2% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:39% 0%}
+    50%{background-position:62% 100%}
+    100%{background-position:20% 0%}
+}
+
       .main {
         grid-column: span 4;
         grid-row:span 4; 
         background-color: #e9f8e5;
+        transition: background-color 2s ease-in-out;
       }
       .nav {
         grid-column: span 1;
@@ -34,7 +57,7 @@
         background-color: #f8e5ed;
       }
       .footer{ 
-         grid-column: span 6;
+        grid-column: span 6;
         grid-row: span 1;
         background:#fff9c8;
         text-align: center;
@@ -147,22 +170,128 @@
     }
 
 
-    @media (max-width:900px) {
+    /* midumn */
+    @media (max-width:1200px)and (min-width:900px) {
+    .container {
+        grid-template-columns: repeat(6,1fr) ; /* One column */
+        grid-template-rows: repeat(6,1fr);
+        
+    }
+    .img2{
+       animation: scale 0.5s infinite ease-in-out;
+    }
+    @keyframes scale {
+        0%, 100% { transform: scale(1); } 
+        50% { transform: scale(2); }
+    }
+
+    }
+    .header{
+        grid-column: span 6;
+        grid-row: span 1;
+        text-align: center;
+        justify-content: center;
+    background: linear-gradient(336deg, #f7c2d6, #97adf7, #e2ab77);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 2s ease infinite;
+    -moz-animation: AnimationName 2s ease infinite;
+    animation: AnimationName 2s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:39% 0%}
+    50%{background-position:62% 100%}
+    100%{background-position:39% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:39% 0%}
+    50%{background-position:62% 100%}
+    100%{background-position:39% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:39% 0%}
+    50%{background-position:62% 100%}
+    100%{background-position:39% 0%}
+}
+    
+    .nav{
+        grid-column:span 1;
+        grid-row:span 4;
+        background-color: #ffedee;
+
+    }
+    .main{
+        grid-column:span 4;
+        grid-row: span 4;
+        background-color: #c0c1f1;
+        border: #ffffff;
+        border-width: 3px;
+    }
+
+    .aside{
+        grid-column: span 1;
+        grid-row: span 4; 
+        
+    }
+   .footer{
+    grid-column:span 6; 
+    grid-row:span 1;
+    
+   }
+
+
+@keyframes move-left-and-right {
+  0%   { left:0px;}
+  25%  { left:200px;}
+  50%  {left:0px;}
+  75%  {left:-200px; }
+  100% {left:0px}
+    }
+
+/*small*/
+    @media (max-width:900px)and (min-width:700px) {
     .container {
         grid-template-columns: 1fr ; /* One column */
         grid-template-rows: repeat(8,1fr);
         height: 100vh;
     }
+    *:read-write {
+        font-family: 'Courier New', Courier, monospace;
+        background: linear-gradient(336deg, #ffc7d5, #dff3ff, #fff8ce);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 14s ease infinite;
+    -moz-animation: AnimationName 14s ease infinite;
+    animation: AnimationName 14s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:39% 0%}
+    50%{background-position:62% 100%}
+    100%{background-position:39% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:39% 0%}
+    50%{background-position:62% 100%}
+    100%{background-position:39% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:39% 0%}
+    50%{background-position:62% 100%}
+    100%{background-position:39% 0%}
+}
     .nav{
         grid-column:span 1;
         grid-row:span 1;
+
     }
     .main{
         grid-column:span 1;
         grid-row: span 1;
         background-color: #dfecff;
-        animation: body-color 5s infinite alternate;
     }
+
     .aside{
         grid-column: span 1;
         grid-row: span 1; 
@@ -175,9 +304,121 @@
    .footer{
     grid-column:span 1; 
     grid-row:span 1;
-    /*one column, everything needs to be the same number*/
+    
    }
+   .image-container{
+    animation: footer-move 3s infinite linear;
+    position: relative;
+   }
+   @keyframes footer-move {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+   }
+
+   .img{
+        animation: scale 2s infinite ease-in-out;
+    }
+    @keyframes scale {
+        0%,100% {transform:scale(1);}
+        50%{transform: scale(2);}
+    }
+    .img2{
+    position: relative;
+  animation-name: move-left-and-right;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
+    }
+/*smaller*/
+    @media (max-width:700px) {
+    .container {
+        grid-template-columns: 1fr ; /* One column */
+        grid-template-rows: repeat(16,1fr);
+        height: 100vh;
+    }
+    .img2{
+       animation: scale 0.5s infinite ease-in-out, rotate 1s infinite linear;
+    }
+    @keyframes scale {
+        0%, 100% { transform: scale(1); } 
+        50% { transform: scale(2); }
+    }
+    @keyframes rotate {
+        0% { transform: rotate(0deg);}
+        100% { transform: rotate(360deg);}
+    }
+    .nav{
+        grid-column:span 1;
+        grid-row:span 1;
+
+    }
+    .main{
+        grid-column:span 1;
+        grid-row: span 1;
+        background-color: #ffe4ea;
+    }
+
+    .aside{
+        grid-column: span 1;
+        grid-row: span 1; 
+        
+    }
+    .header{
+        grid-column:span 1;
+        grid-row: span 1;
+    }
+   .footer{
+    grid-column:span 1; 
+    grid-row:span 1;
+    
+   }
+   .image-container{
+    animation: footer-move 3s infinite linear;
+    position: relative;
+   }
+   @keyframes footer-move {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+   }
+   *:read-write {
+        font-family: 'Courier New', Courier, monospace;
+        background: linear-gradient(336deg, #ffc7d5, #dff3ff, #fff8ce);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 14s ease infinite;
+    -moz-animation: AnimationName 14s ease infinite;
+    animation: AnimationName 14s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:39% 0%}
+    50%{background-position:62% 100%}
+    100%{background-position:39% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:39% 0%}
+    50%{background-position:62% 100%}
+    100%{background-position:39% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:39% 0%}
+    50%{background-position:62% 100%}
+    100%{background-position:39% 0%}
+}
+    
+      border: 5px solid rgb(255, 164, 202);
+      border-radius: 15px;
+      height: 400px;
+      width: 100%;
+      margin: auto;
+      color:rgb(224, 100, 141);
+    }
+
+
+      
+    
+
+
 
 
 
@@ -191,7 +432,9 @@
     <body>
     <div class='container'>
         <div class="header">
+           <div class="img2">
             <img src="image\Untitled-1.png" alt="hehe">
+        </div>
         </div>
    
     <div class="nav">
