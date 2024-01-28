@@ -4,6 +4,11 @@
         body{
             transition: background-color 1s ease-in-out; 
         }
+        .img2{
+            height: 100px;
+           margin: auto;
+           margin-top: 50px;
+        }
         .container {
     display: grid;
     grid-template-columns: repeat(6, 1fr); 
@@ -42,7 +47,7 @@
 
       .main {
         grid-column: span 4;
-        grid-row:span 4; 
+        grid-row: span 4;
         background-color: #e9f8e5;
         transition: background-color 2s ease-in-out;
       }
@@ -134,7 +139,7 @@
       background-color: rgb(253, 250, 218);
       border: 5px solid rgb(255, 164, 202);
       border-radius: 15px;
-      height: 400px;
+      /* height: 400px; i commented out this code */
       width: 100%;
       margin: auto;
       color:rgb(224, 100, 141)
@@ -169,20 +174,30 @@
       list-style: square inside url("sqpurple.gif");
     }
 
-    /*bigger*/ /*works okay*/
+    /*bigger*/ 
 @media (max-width:1800px)and (min-width:1400px) {
     .container {
+        display: grid;
         grid-template-columns: repeat(6,1fr) ; 
         grid-template-rows: repeat(6,1fr);
         
     }
-    
+    *:read-write {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(253, 250, 218);
+    border: 5px solid rgb(255, 164, 202);
+    border-radius: 15px;
+    width: 80%;
+    margin: auto;
+    height: 301px;
+    color: rgb(224, 100, 141);
+}
     .header{
     grid-column: span 6;
     grid-row: span 1;
     text-align: center;
     justify-content: center;
-    background: linear-gradient(336deg, #e24682, #97adf7, #e2ab77);
+    background: linear-gradient(336deg, #e99fbb, #97adf7, #e2ab77);
     background-size: 600% 600%;
     -webkit-animation: AnimationName 2s ease infinite;
     -moz-animation: AnimationName 2s ease infinite;
@@ -204,33 +219,35 @@
         100%{background-position:39% 0%}
     }
 }
+
     .nav{
         grid-column:span 1;
         grid-row:span 4;
-        background-color: #ffedee;
+        background-color: #e2e3ff;
 
     }
     .main{
         grid-column:span 4;
         grid-row: span 4;
-        background-color: #c0c1f1;
-        border: #ffffff;
-        border-width: 3px;
+        background-color: #f1f7f5;
     }
 
     .aside{
         grid-column: span 1;
-        grid-row: span 4; 
+        grid-row: span 4;
         background-color: #f8e5ed;
     }
    .footer{
     grid-column:span 6; 
-    grid-row:span 1;
+    grid-row:span 1; 
     
    }
 
    .img2{
-       animation: scale 0.5s infinite ease-in-out;
+    width: 500px;
+       /* animation: scale 0.5s infinite ease-in-out; */
+       margin: auto;
+       max-width: 100px;
     }
     @keyframes scale {
         0%, 100% { transform: scale(1); } 
@@ -239,20 +256,20 @@
 }
     
 
-    /* big */ /*the header here is too wide D:<*/
+    /* big */ 
     @media (max-width:1400px)and (min-width:1000px) {
     .container {
         grid-template-columns: repeat(6,1fr) ; 
         grid-template-rows: repeat(6,1fr);
         
     }
-    
+   
     .header{
     grid-column: span 6;
     grid-row: span 1;
     text-align: center;
     justify-content: center;
-    background: linear-gradient(336deg, #e24682, #97adf7, #e2ab77);
+    background: linear-gradient(336deg, #f1a8c4, #97adf7, #e2ab77);
     background-size: 600% 600%;
     -webkit-animation: AnimationName 2s ease infinite;
     -moz-animation: AnimationName 2s ease infinite;
@@ -262,6 +279,7 @@
     
     .img2{
        animation: scale 0.5s infinite ease-in-out;
+       max-width: 100px;
     }
     @keyframes scale {
         0%, 100% { transform: scale(1); } 
@@ -291,7 +309,9 @@
     grid-column: span 1;
     grid-row: span 4;
     background-color: #ffedee;
+    
 }
+
 
     .main{
         grid-column:span 4;
@@ -299,6 +319,7 @@
         background-color: #c0c1f1;
         border: #ffffff;
         border-width: 3px;
+        height: 100%;
     }
 
     .aside{
@@ -311,6 +332,17 @@
     grid-row:span 1;
     
    }
+   *:read-write {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(253, 250, 218);
+    border: 5px solid rgb(255, 164, 202);
+    border-radius: 15px;
+    width: 80%;
+    margin: auto;
+    height: 301px;
+    color: rgb(224, 100, 141);
+}
+}
 
 
 
@@ -321,8 +353,8 @@
     @media (max-width:1000px)and (min-width:800px) {
     .container {
         grid-template-columns: repeat(6,1fr) ; 
-        grid-template-rows: repeat(8,1fr);
-        height:100vh;
+        grid-template-rows: repeat(6,1fr);
+       
     }
     .img2{
        animation: scale 0.5s infinite ease-in-out;
@@ -332,13 +364,13 @@
         50% { transform: scale(2); }
     }
 
-    }
+    
     .header{
         grid-column: span 6;
         grid-row: span 1;
         text-align: center;
         justify-content: center;
-    background: linear-gradient(336deg, #f7c2d6, #97adf7, #e2ab77);
+    background: linear-gradient(336deg, #f7c2d6, #97adf7, #dbc4ae);
     background-size: 600% 600%;
 
     -webkit-animation: AnimationName 2s ease infinite;
@@ -363,13 +395,13 @@
 }
     
     .nav{
-        grid-column:span 3;
+        grid-column:span 2;
         grid-row:span 2;
         background-color: #ffedee;
 
     }
     .main{
-        grid-column:span 3;
+        grid-column:span 4;
         grid-row: span 4;
         background-color: #c0c1f1;
         border: #ffffff;
@@ -377,7 +409,7 @@
     }
 
     .aside{
-        grid-column: span 3;
+        grid-column: span 2;
         grid-row: span 2; 
         
     }
@@ -386,6 +418,7 @@
     grid-row:span 1;
     
    }
+}
 
 
 
@@ -396,13 +429,13 @@
   75%  {left:-200px; }
   100% {left:0px}
     }
-}
+
 
 /*small*//*this part becomes a mess.. each span is SUPER SUPER LONG*/
     @media (max-width:800px)and (min-width:500px) {
     .container {
         grid-template-columns: 1fr ; 
-        grid-template-rows: repeat(12,1fr);   
+        grid-template-rows: repeat(5,1fr);   
     }
     *:read-write {
         font-family: 'Courier New', Courier, monospace;
@@ -455,21 +488,22 @@
     
    }
    .image-container{
-    animation: footer-move 3s infinite linear;
+     
     position: relative;
    }
-   @keyframes footer-move {
+  
+/* this is where we rotate the images */
+   #one{
+        animation: footer-move 3s infinite linear;
+    }
+    #two{
+        animation: footer-move 3s infinite linear;
+    }
+    @keyframes footer-move {
     0% { transform: rotate(0deg);}
     100% { transform: rotate(360deg);}
    }
-
-   .img{
-        animation: scale 2s infinite ease-in-out;
-    }
-    @keyframes scale {
-        0%,100% {transform:scale(1);}
-        50%{transform: scale(2);}
-    }
+   
     .img2{
     position: relative;
   animation-name: move-left-and-right;
@@ -483,59 +517,52 @@
     @media (max-width:500px) {
     .container {
         grid-template-columns: 1fr ; 
-        grid-template-rows: repeat(8,1fr);
-        height: auto;
+        grid-template-rows: repeat(5,1fr);
+        height: 200vh;
         
     }
-    .img2{
-       animation: scale 0.5s infinite ease-in-out, rotate 1s infinite linear;
-    }
-    @keyframes scale {
-        0%, 100% { transform: scale(1); } 
-        50% { transform: scale(2); }
-    }
-    @keyframes rotate {
-        0% { transform: rotate(0deg);}
-        100% { transform: rotate(360deg);}
-    }
+   
     .header{
         grid-column:span 1;
-        grid-row: span 1;
+        
     }
     .nav{
         grid-column: span 1;
-        grid-row:span 1;
-
     }
     .main{
         grid-column:span 1;
-        grid-row: span 4;
         background-color: #ffe4ea;
     }
 
     .aside{
         grid-column: span 1;
-        grid-row: span 1; 
+        
         
     }
    .footer{
     grid-column:span 1; 
-    grid-row:span 1;
+    
     
    }
    .image-container{
-    animation: footer-move 3s infinite linear;
     position: relative;
    }
-   @keyframes footer-move {
+
+
+    @keyframes footer-move {
     0% { transform: rotate(0deg);}
     100% { transform: rotate(360deg);}
    }
+   
    *:read-write {
         font-family: 'Courier New', Courier, monospace;
         background: linear-gradient(336deg, #ffc7d5, #dff3ff, #fff8ce);
     background-size: 600% 600%;
-
+    
+    height: 300px;
+    width: auto;
+    margin: auto;
+    position: relative;
     -webkit-animation: AnimationName 14s ease infinite;
     -moz-animation: AnimationName 14s ease infinite;
     animation: AnimationName 14s ease infinite;
@@ -556,15 +583,7 @@
     50%{background-position:62% 100%}
     100%{background-position:39% 0%}
 }
-    
-      border: 5px solid rgb(255, 164, 202);
-      border-radius: 15px;
-      height: 400px;
-      width: 100%;
-      margin: auto;
-      color:rgb(224, 100, 141);
-    }
-}  
+    }  
 
       
     
@@ -584,7 +603,7 @@
     <div class='container'>
         <div class="header">
            <div class="img2">
-            <img src="image\Untitled-1.png" alt="hehe">
+            <div class="img-header"><img src="image\Untitled-1.png" alt="hehe"></div>
         </div>
         </div>
    
